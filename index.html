@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css">
+        <title>My Thesis</title>
+    </head>
+    <body>
+        <div class="layout">
+
+            <nav class="sidebar">
+                <div class="sidebar-title">
+                    Digital Fugitive Archives
+                </div>
+                <ul class="post-list" id="postList"></ul>
+            </nav>
+
+            <main class="main" id="main">
+                <div class="welcome" id="welcome"> “Memory (the deliberate act of remembering) is a form of willed  creation. It is not an effort to find out the way it really was--that is research. The point is to dwell on the way it appeared and why it  appeared in that particular way.” 
+                 ―  Toni Morrison,   The Source of Self-Regard</div>
+            </main>
+
+        </div>
+        <script>
+            // Edit your posts here
+            const POSTS = [
+                {
+                    id: "kickoff",
+                    title: "kickoff",
+                    date: "2026-01-25",
+                    content: `
+                        <p>in so many words, i am problematizing the daily technological rituals we use for memory keeping and personal archiving. growing up, we flipped through photo albums containing images passed from hand to hand, across border and oceans. by peering at these collections of images, noting their arrangments, we are introduced to a relationship with our heritige and history rooted in relationality, storytelling, and love.</p>
+
+                        <p>what are the implications of using big tech platforms to digitally archive our lives? how do the logics of the platform impact the way that we remember? how do said technologies remember? how can we build remembering technologies that do not remember in order to sell you things or build an algorithmic understanding of who we are, but instead encourage us to remember?</p>
+
+                        <p>We're living in an age of digital information. We're bombarded by stuff all the time. And so much of what we've seen of these protests is being documented in real time on social media. Why isn't that enough? Why isn't that its own archive?</p>  
+                        
+                        <blockquote>An archive is actually a space where, in theory, we are processing information; we're arranging and describing it according to a certain set of standards. And we're making it discoverable in specific types of ways and we're stewarding it for what we often think is a very long future.” <a href="https://www.cbc.ca/radio/day6/beirut-explosion-covid-19-rehab-centres-black-is-king-blackivists-lindy-west-and-more-1.5676297/this-team-of-black-archivists-is-dedicated-to-documenting-the-black-lives-matter-movement-1.5676910">source</a></blockquote>
+
+                        <p>Websites (particularly social media sites) are sorry excuses for archives. They lack in the foundational and critical affordances that archives are meant to address. The question I am posing is how to make a website (and related infrastructure) that is a proper critical archive? Or at least question the use of websites as archives through provocation.</p>
+
+                        <p>this week i developed my process website. this is written by hand and hosted using codeberg. here you can find links to my research resources, a project timeline, and a way to contact me.</p>
+                        
+                        <p>outside of this website, this week i experimented with a collection of <a href="https://irawoajasin.github.io/datafiedpasts_desirousfutures/">computational poetry</a> that grows and speaks to each other. in my final piece, want it to allow visitors to have data presented to them as questions rather than definitive statements. i want to explore what a poetic of data might feel like that takes algorithmic predictions and questions/ritualizes/probes at them. i tried my hand at setting up my raspberry pi to put this small dataset of poetry grammars on but i had some trouble. i aim to have that piece completed by next week.</p>
+
+                        <img src="assets/grammars.png">
+
+                        <figure>
+                            <video width="800" height="500" autoplay loop muted playsinline>
+                                <source src="assets/comppoetry.mov">
+                                
+                                Your browser does not support the video tag.
+                            </video>
+                            <figcaption><a href="https://github.com/irawoajasin/datafiedpasts_desirousfutures">Github Source</a></figcaption>
+                        </figure>
+                    `
+                },
+                {
+                    id: "week-one",
+                    title: "design considerations",
+                    date: "2026-02-01",
+                    content: `
+                        <p>I started this week trying to get more clear about what I'm trying to actually build here. To start, I asked around and researched to find a set of key design exemplars I have enjoyed that emulate some aspect of my design goals and what I think they did successfully.</p>
+
+                        <h3>solar protocol</h3>
+                        <p>This project introduces a new model for web infrastructure by designing a distributed and decentralized server protocol based on the power of the sun. Beyond the impact of community resilience over internet infrastructure, this answers questions about ownership, sovereignty, and how infrastructure can be built on logics counter to big tech.</p>
+                        <p>In my research, I interviewed an oral historian who I talked a lot with about the idea of distributed knowledge systems. Allowing for our pools of knowledge to exist first and foremost on our own terms and for these records to be situated within their cultural contexts. How this relates with my project is that solar protocol illustrates an ability to create distributed self-hosted networks that feed into each but have independent hardware that exists situated in place.</p>
+
+                        <i>takeaway: Distributed knowledge systems situated around their relationship with place</i>
+
+                        <h3>feral earth</h3>
+                        <p>I was introduced to this project a while back and its ethos is quite similar to that of solar protocol in that is is a self-hosted distributed server and website. What is different that I am taking inspiration from is how each page on the site is able to be served based on various weather data points. For instance a page only being able to be served if the wind is blowing west.</p>
+                        <p>This integrates an important thing to think about when it comes to authentification. I want the ability to see the data within the system to only be seen or interacted with based on certain behaviors. For instance, you must be in the local vicinity of the server and must have another person present at the same time in order for the dataset to load.</p>
+
+                        <i>takeaway: Set of values based server protocols on one page</i>
+
+                        <h3>dear data</h3>
+                        <p>What I love about this project is the emphasis on the interpretive and creative dimension of data. What is the most important to me in this project is being being able to record, save, and customize the way that memory data is stored and accessed. This means customized metadata fields that are changing and growing and morphing based on the people stewarding it. This process of labeling the data and making choices about how it is depicted is a highly creative process and I want to encourage that creativity in the design.</p>
+
+                        <i>takeaway: Non-linear, non-prescriptive, and fluid metadata fields and data visualizations</i>
+
+                        <h3><a href="https://taper.badquar.to/12/whats_in_my_bag.html">Whats in my bag</a></h3>
+                        <p>This is a web art piece that works to mirror intricate rituals of our lives. It is a simple interactive piece revealing poetry over time based on a list of things you keep in your bag. I really want the data visualization to be portrayed in a poetic fashion like this! As well as for the participant in the system to have control over how the poetry is visualized, especially if they are the ones adding a dataset.</p>
+
+                        <p>A question that comes from looking and thinking about this exemplar is, <i>what do I mean by data?</i> I think that originally I was thinking about things that people usually put on social media as forms of digital archives. Things like photos, videos, and maybe short text snippets (like tweets). But then I was thinking about the politics of counting and thought more about quantitative data as cultural object worth critique. This piece here depicts a list of items as database. Maybe lists is the goal here? Turning a CSV with text and numbers and counts as fields? So people add things to a CSV and then it is added to the tool in some way based on a series of customizable parameters the user has the option to adjust.</p>
+
+                        <i>takeaway: Ritualize database of lists, counting or naming sets of items. Visualizing those items less like typical data vis but more interactive poetry of the data. (need to make some examples of what this might look like CSV -> interactive poetry that ritualizes it)</i>
+
+                        <h3><a href="https://consumed.today/">Consumed Today</a></h3>
+                        <p>This is a daily digest of the food and media that make up the diet of the handmade web artist shen. what I like about this is the customization of recording ones life over time. There is a required consistency within this which is really special. I assume on the backend, selecting the items, transparent photos, and links are special to select. But there is also sound and visual effects to the archive that make the entire thing feel very handmade and whimsical.</p>
+
+                        <i>takeaway: Daily ritual of data gathering can happen with low friction. Accessing data may be with the hardware itself. Stewardship is important to maintain over time.</i>
+
+                        <h3><a href="https://poppenhu.is/">Poppenhuis</a></h3>
+                        <p>This is a space for sharing collections of 3D scans! Its almost a social media-esque platform for sharing collections where you can customize the metadata of your items within your archive. There is a set of base field but there is ability to add additional metadata fields. I think this is great in thinking about the social dimension of this project. How would I want people to index through the collections? Would I want people to share their data with others, viewable by others in this way? How might they enter and view metadata? What is metadata used for (thinking about sorting, indexing, and retreiving)</p>
+
+                        <i>takeaway:</i><br>
+                        <i>How to make the data entry/collection ritualistic and creative, particularly in how metadata is organized/labeled. What is the relationship between individuals? What does collective stewardship look like in comparison to individual control of your data/metadata labels?</i>
+
+                        <h2>so final design consideration ideas</h2>
+                        <p>So with those in mind I have been thinking more about what metaphors or comparisons I want to use to communicate my thesis'. One thought I was how can a digital archive feel more like composting as opposed to a garbage dump. The action of "dumping" is very commonly used in online archiving (think: photo dumps)  which contributes to the concept of infinitely growing feeds/piles of *stuff* that we never really return back to. Through more choice additions, consistent rotating/tilling/pruning, and regular use/review of the material for growth, we may take more of a compost approach. No abandoning material into the fast current of the feed but tucking it away to slowly ripen over time.</p>
+
+                        <blockquote>"trust that what disappears may return in a different ungovernable form" <br>- sophie soobramamien in Archiving/Composting</blockquote>
+                    `
+                },
+                {
+                    id: "week-two",
+                    title: "fugitivity metaphors",
+                    date: "2026-02-10",
+                    content: `
+                        <p>This week I am doing some thinking about what metaphors may be useful to explore the four dimensions of fugitive memory technologies:</p>
+                        <ol>
+                            <li>fluid over legible</li>
+                            <li>culturally embedded & situated in place</li>
+                            <li>embodied & dialogic</li>
+                            <li>intimate and relational</li>
+                        </ol>
+
+                        <p>Based on these guiding considerations, I tried to come up with some ideas.</p>
+
+                        <h2>data composting</h2>
+                        <blockquote>Culturally embedded dialog physically around archives supports the sustainability of digital archives by allowing its language and metadata to live, grow, die, and morph based on who the language is in service of at that time.</blockquote>
+                        
+                        <p>One thought I was how can a digital archive feel more like composting as opposed to a garbage dump. The action of "dumping" is very commonly used in online archiving (think: photo dumps) which contributes to the concept of infinitely growing feeds/piles of *stuff* that we never really return back to.</p>
+
+                        <p>By treating a digital archive as a compost bin rather than a dumping ground, we emphasize culturally embedded sustainability in the practice of stewardship. Through more choice additions, consistent rotating/tilling/pruning, and regular use/review of the material in service of growth, we may take more of a compost approach. Not abandoning material into the fast current of the feed but tucking it away to slowly ripen over time.</p>
+
+                        <h2>the dataset</h2>
+                        <p>In this thinking, a dataset in question may look like something that is added to by multiple people, with each individual taking something they maybe no longer need or have much use for, and contributing to a collective library. It should be participatory and changing.</p>
+
+                        <h2>the enclosure</h2>
+                        <p>Part of composting is this idea of adding nutrients and things to the sum. As well as tilling it by hand in order to keep things moving and alive within. Thus, the interaction should afford mixing/rotating</p>
+
+                        <h2>the protocol</h2>
+                        <p>The metadata will act as living material that will inform the evolution of the related data. Metadata should be mutable and show traces of change. As you till:</p>
+                        <ul>
+                            <li>values drift</li>
+                            <li>tags bleed into neighboring items</li>
+                            <li>fields get averaged, partially erased, or re-weighted</li>
+                            <li>some items “surface” and others get buried</li>
+                        </ul>
+
+                        <h2>participatory rituals</h2>
+                        <bloackquote>Fugitive technologies should necessitate intimacy and relationality between us, our archival materials, and our lineage, history, and community members to strengthen a deeper, more embodied, and confident way of knowing of our memories.</blockquote>
+                        <ul>
+                            <li>requiring dialogue with each other abt the data</li>
+                            <li>collective stewardship</li>
+                            <li>both needed to change things like weights and metadata</li>
+                        </ul>
+                        <h2>questions for in-class prototype demo</h2>
+                        <p>Each one of these pose a "way of being with data"</p>
+                        <ul>
+                            <li>which do you think is stronger? why?</li>
+                            <li>what interactions do you think would contribute to the goals i mentioned?</li>
+                            <li>thinking abt voice, text changing or merging w each other</li>
+                            <li>what kind of data in your lives do you think would be interesting to interact with in these ways?</li>
+                            <ul>
+                                <li>particularly because this is problematizing ways that we archive using traditional tools</li>
+                                <li>thinking abt photos app, google maps commons locations and how long you spend there, google searches</li>
+                            </ul>
+                        </ul>
+                        <h2>demo feedback</h2>
+                        <ul>
+                            <li>would be interesting to see how data interact with one another when they bump into each other in space</li>
+                            <li>make it feel private with whispering as an interaction</li>
+                            <ul>
+                                <li>a confessional!</li>
+                                <li>data breach relationship with intimacy</li>
+                            </ul>
+                            <li>hand written notations, things in the margins</li>
+                            <ul>
+                                <li>the materiality of handwriting itself</li>
+                                <li>notes feel akin to like old youtube commends, how people leave traces on the internet (collective internet memory)</li>
+                            </ul>
+                            <li>reverse dating app where instead of curating data driven meetings between people, meet people through the data (personal engagement</li>
+                            <li>that engagement with hands being very key and akin to early ways that people connect and build intimacy (patty cake, etc)</li>
+                        </ul>
+                    `
+                },
+                {
+                    id: "week-three",
+                    title: "archive design",
+                    date: "2026-02-16",
+                    content: `
+                    <p>After last week, I got a lot of ideas thinking about how one might use metaphor to practice ways of being with the intangible data objects we encounter every day. While I really enjoyed thinking about the concept of composting with your data and leaving traces the way you would with annotating a library book, I found myself getting very overwhelmed with the high concept ideas and how to materialize them into a specific project. So, I decided to take a couple steps back to what inspired this project to begin with!</p>
+                    <p>Last semester when I interviewed and visited various distributed autonomous archives (particularly <a href="https://interferencearchive.org/">Interference Archive</a>), I learned a lot about the frustrations they had about the tools they use to digitize their collections. I remembered how they talked about traditional digital archive tooles can make a lot of assumptions about how things ought to be labled and remembered digitally. I decided to start here in thinking about more specific considerations to build a simple archive platform off of. Of course the metaphors were very helpful in supportive in thinking about interaction, I also needed to reframe to specific design features. As Tonia Sutherland (black archivist) states, traditional technologies for memory emphasize:</b>
+                    <ul>
+                        <li>extraction</li>
+                        <li>ownership+control</li>
+                        <li>power</li>
+                        <li>permanence</li>
+                    </ul>
+                    <br>
+                    <p>In addition to these colonail logics of digital archives that Sutherland mentioned, I would add:</p>
+                    <ul>
+                        <li>universalist</li>
+                        <li>disembodied (from the land and body)</li>
+                        <li>individualist</li>
+                        <li>permanence more specifically in relation to</li>
+                        <ul>
+                            <li>immortality</li>
+                            <li>legibility</li>
+                        </ul>
+                    </ul>
+                    <p>This week I just wanted to think very simply about how I might integrate this into a traditional digital archive experience so I started out with a form that one would use to simply submit a memory! The development of this form required some work setting up a simple UI on mobile and another screen to view the collective memories together. I thought about the ways that I might prompt for and collect data and metadata based on the values I listed above. So far this is what I have:</p>
+                    <ul>
+                        <li>what is a memory you have with water?</li>
+                        <li>Where did you feel the memory?</li>
+                        <li>How long ago?</li>
+                        <li>Who was present?</li>
+                    </ul>
+
+                    <figure>
+                        <img src="assets/archivequestions.png">
+                        <figcaption><a href="https://github.com/irawoajasin/fugitive-data-project">Github Source</a></figcaption>
+                    </figure>
+                    <br>
+
+                    <p>here I'm thinking about how to ritualize the collection of data through these more embodied questions. Thinking about the memory as a sensory experience not just a datafied experience. Its timestamp not needed to be a legible and static. To think about how the memory was experienced with and through others, not just as a individual experience. I want to think more about how these questions can feed into the way that the memories in the digital archive are visualized and how the metadata that you select about the memory impact it as well. But for now, I was able to make some progress on getting the actual infrastructure and codebase started for the project.</p>
+
+                    <b>How this work fits in with other work in a similar vein</b>
+                    <p>as i mention in my thesis paper and research, this work is influenced by critical archival studies and black studies scholars. I also also highly influenced by and aim to contribute to critical data studies through this work. My unique contribution is thinking both through a cybercultural lens. Through the internet, we are all archivists, whether we like it or not. Whether its intentional or not. Behavioral data is passivley extracted from us which goes into data repositories that do make up documentation about our histories and lives. That memory material is what I'm critiquing in this work, not just intentional archiving like vlogs and digitized museum collections. What is unique as well is that my intention for this installation to serve as an informative piece as opposed to solely an academic/arts-based research. I want people to walk away thinking about the ways their memories and lives are intentionally and unintentionally archived by platforms. I want them to walk away with specific and actionable tactices to think differently about their data and memories online.</p>
+                    `
+                },
+                {
+                    id: "week-four",
+                    title: "archive design pt2",
+                    date: "2026-02-22",
+                    content: `
+                        <p>For the past two weeks I have been working on a proof of concept for my digital archive design. The vision for this MVP will be a raspberry pi hyperlocal digital archive that you can only add data to when you are in its vicinity (captive wifi network). At that point, you can open the website that has a form I developed that prompts you to contribute some kind of memory data and metadata. Then you will be able to engage with the archive through one of the speculative protocols that I want to use as the primary provocation. For the demo, I want to choose one that I find the most compelling and easy to integrate into my existing infrastructure.</p>
+                        <h2>proposed tech stack</h2>
+                        <ul>
+                            <li>raspberry pi 4 or 5 (see what I'm getting from my lab)</li>
+                            <ul>
+                                <li>WiFi Access Point mode where the Pi broadcasts its own network, forcing proximity to access</li>
+                                <li>Pi runs as a captive WiFi network</li>
+                            </ul>
+                            <li>Node.js + Express for the lightweight server</li>
+                            <li>SQLite as a single-file database</li>
+                            <li>vanilla HTML/CSS/JS site accessible via local domain</li>
+                            <li>Maybe some kind of simple pcomp interaction or screen based prompt for irl engagment (stretch goal)</li>
+                        </ul>
+
+                        <h2>proposed protocol</h2>
+                        <p>data composting! this will meet my original design consideration of being a culturally embedded dialog physically around archives supports the sustainability of digital archives by allowing its language and metadata to live, grow, die, and morph based on who the language is in service of at that time. using my early experiments I may have the data floating in space on the main screen and provide an interaction allowing users to "till" the data in the server, watching the metadata shift, change, and breakdown over time.</p>
+
+                        <h2>what's next</h2>
+                        <p>At this point, I have a local server, a submission form with some considerations around how metadata will be stored, a random memory reader, and a very basic admin view page with a list of the submitted memories which will be the screen-based part of the installation. Next I must...</p>
+
+                        <ul>
+                            <li><b>migrate code to the pi:</b> I have a raspberry pi 4 at the moment that I have set up with an OS using Raspberry Pi Imager. Now I need to install node, flash over the code/server I have so far, and set up the WiFi access point.</li>
+                            <li>if extra time, incorporate my prior p5.js compost protocol prototype so that I can actually test and get feedback on the experimental protocol which I consider as the central piece of this work.</li>
+                        </ul>
+                        <br>
+                        <p>I hope to be able to get both of these done in order to get some key feedback from the faculty! I only worry about timing and feasibility.</p>
+                    `
+                },
+                {
+                    id: "week-five",
+                    title: "midterm preparation",
+                    date: "2025-03-09",
+                    content: `
+                    <p>
+                        So I spoke to Craig last week about experimental protocols of fugitivity and how they could be designed. We talked a lot about the idea of a "for you" or "discovery" page where you really aren't doing much discovery at all. Additionally, you don't have much control over how "discoverable" you content actually is. These ideas fed into how I was thinking about data composting very well but I had been having trouble figuring out how to approach the protocol design. After I showed Craig some of my earlier experiments at the start of the semester, he suggested I just use rita.js to think about shifting and changing the data/metadata when you "till" the soil as an option which sparked a lot of ideas. I took some time to develop some experimentation around using RiTA.js to manipulate data + metadata but as I was doing this, I found that the compost analogy just felt like I was adding too much. Now I am moving towards a new direction:</p>
+                        <ul>
+                            <li>minimal server</li>
+                            <li>ability to have control over how "fugitive" your data is within the system during submission</li>
+                            <ul>
+                                <li>this is where rita can come into play changing the text of your memory over time</li>
+                                <li>and the metadata can also warp?</li>
+                                <li>this also controls the decay condition, like how long until things decay are are redacted out?</li>
+                            </ul>
+                            <li>intimate and embodied encounter with a memoryinstead of discovery</li>
+                        </ul>
+
+                        <blockquote>
+                            "imagine instead of archiving your trip to you homeland on instagram where your data and metadata are tracable, legible, owned by tech billionairs, scraped for corporate gain, etc, you instead house your digital memories in a place that practices fugitivity. your data and metadata remains private, secure, evasive, illegible, and fugitive"
+                            <br>
+                            - me trying to explain this piece in one sentence
+                        </blockquote>
+
+                        <p>Thematically, I aim to invert assumptions about what memory means online.<p>
+
+                        <p><b>platform memory</b> on various social media platforms are structure for machines first. They have highly structured metadata, permanent records, algorithmic ranking, and clear ownership by the platform. Here our memories are transformed into a data object</p>
+
+                        <p><b>fugitive archive memory</b> leans into transformation, fluidity, refusal, non-optimization, and sensorality. Here there is controlled illegibility, non-extractive, theories of refusal through strategic ephemerality.</p>
+                        <ul>
+                            <li>(Benjamin Haber - strategic forgetting to resist memorialization)</li>
+                            <li>Decay and mutation prevent the archive from becoming permanent surveillance record.</li>
+                            <li>Permanance can be dangerous because it enables profile, prediction, and ML extraction. Critical archive studies questions the desire for permanance of the archive, encouraging that memory is an embodied endeavor and not something we have to ensure through infrastructures.</li>
+                            <li>Memory is a temporal artifact</li>
+                        </ul>
+
+                        <br>
+                        <p>if I go back to my three dimensions of the piece...</p>
+
+                        <h2>the data (and metadata) object</h2>
+                        <p>Here the object is the memory that you submit. it asks for a memory you have with water to accomplish two things. Firstly to have a clear theme of the archive that extends through the design of the installation (thinking about Deep Sea Dwellers) as well as to have a dialogue with each other through the archive.</p>
+
+                        <p>After you fill out your memory, you have to record some metadata, some of which mirrors traditional metadata fields and others that provide some sensory reflection on metadata about the memory beyond what is "useful" to a machine's system. The last field you have to fill is how the memory should live in the archive, allowing the participant to decide how "stable" their memory will be treated in the collective memory.</p>
+
+                        <p>Taking inspiration from <a href="https://redact.dev/how-it-works">redact.dev<a> which scrambles your data and comments so that you are actually in control of the process of deletion. (otherwise reddit still has access to your deleted comments), the data and its metadata is scrambled with RiTA.js over time based on how "stable" you want your memory to remain. This way you can engage in theories of refusal through strategic ephemerality. Benjamin Haber refers to this as strategic forgetting to resist memorialization.</p>
+                        
+                        <figure>
+                            <img style="width: 50%;" src="assets/progress.png">
+                            <figcaption><a href="https://github.com/irawoajasin/fugitive-data-project">Github Source</a></figcaption>
+                        </figure>
+                        <br>
+
+                        <h2>the data server protocol</h2>
+                        <p>you decide how your data is shifted, impermanent, and "fugitive" in the database.</p>
+                        <p>Right now, the things that I think are missing from this are:</p>
+                        <ul>
+                            <li>ritualized and intentional "encounters" with the memories</li>
+                            <ul>
+                                <li>I like the idea of someone having to read it aloud or being served one persons memory (not theirs) and they don't know why (thinking about recommendation algos) and they can leave their mark on it somehow (like the anon youtube comments and archive written annotations)</li>
+                                <li>maybe if you are served someone's memory but it is degrade with the RiTA mutations, you are given a key to decode it? (thinking about encryption)</li>
+                                <li>on your local phone, you can download both your and your paired memory</li>
+                            </ul>
+                            <li>metadata is not doing much here but i want it to be what drives how people receive a memory! like you have to submit one and then you get one that has similar metadata or something?</li>
+                            <ul>
+                                <li>but again the collective negotiation of the metadata schema was the important thing here</li>
+                                <li>wondering how this negotiation could be done simpler or more analog</li>
+                                <li>this also controls the decay condition, like how long until things decay are are redacted out?</li>
+                            </ul>
+                            <li>add a field to make your text expire after an amount of time + also make it so that there is a max amount of memories allowed</li>
+                        </ul>
+
+                        <h2>the database container</h2>
+                        <p>right now this server just lives on my laptop and while this works, I want to think about what distributed, decentralized, and resilient information infrastructure looks like in practice and think about building skills towards that end. with that in mind, i want to get this to a point I'm happy with it and then migrate to a raspberry pi so that people can connect to it as an exposed object</p>
+                        <p>around this pi, I want to build an installation essentially projecting what is on the admin.html page on a cyanotyped screen with images of water to play with some mixed material vibes!</p>
+                        <p>also have thought about the idea of cyanotype wood, glass, etc? need to experiment more beyond cloth + paper</p>
+                    `
+                },
+                {
+                    id: "week-six",
+                    title: "midterm demo!",
+                    date: "2026-03-12",
+                    content: `
+                        <h2>midterm presentation</h2>
+                        <p>This piece is an interactive installation that problematizes our methods of <i>remembering</i> through digital platforms. Traditional platforms often prioritize gathering as much data as possible, asserting this universal logic of labeling our data, and taking ownership over how our datafied memories are treated on and beyond the platform. This is experiment in processing our datafied memories through a digital infrastructure built on the idea of fugitivity, highlighting strategies for how we might take control over our data and digital archives under platform capitalism.</p>
+                        <p>To start the experience, we of course need an archive of memories! So you can start by scanning this QR code to go to the form for leaving a memory. then click ("leave a memory"). A lot of my inspiration and experimentation for this project has been thinking about ecological metaphors for memory and water has emerged as one of my favorites so the form asks "what is a memory you have with water". The form asks for some key metadata fields that ask you to reflect on how the memory lives in our bodies and relationships, beyond whats "useful" for a machine system. All of these fields are optional (besides the memory field). The question "how should this memory live here" and that allows you to decide how "stable" your memory will be treated in the collective memory. "other metadata" allows you to add other descriptive tags that you think is important. Go ahead as you release your memories, i will seed some others as well just to add to the pool. lets look at the large screen!</p>
+                        <p>Each memory floats in space forming this like ambient archive that resists this rigid chronological organization of traditional platforms. you can see your memory and its related metadata. For memories tagged as evasive or shaky, the system begins to mutate the memory over time! under the hood, it uses this small language library called RiTa.js that basically</p>
+                        <ul>
+                            <li>detects the nouns and verbs in the memory</li>
+                            <li>occasionally replaces on of those words with a random word</li>
+                            <li>marks the changed word visually</li>
+                        </ul>
+                        <p>This way you can engage in theories of refusal through Benjamin Haber refers to this as strategic forgetting to resist memorialization</p>
+                        <p>Now on your phones, press "read a memory" instead of a list, the archive give you one random memory for now but the next step I'm trying to explore is different protocols for data encounters. Think about how a "discovery" or "for you" page serves you content based on your extracted behavioral and attention data, here I want to integrate a more ritualized server protocol that ive been playing with.</p>
+                        
+                        <p>one thouht was the ability for the collective to negotiate the metadata schema that determines what memory the server protocol give you. or something more ritualistic in the encounter like being able to decrypt an evasive memory by being given a key! or like leaving trace on the one your were given by drawing some kind of annotation. thinking about intimacy infrastructures</p>
+                        <p>last thing, another next step is to move the database to a small raspberry pi container so that the archive becomes a situated physical object in the room as opposed to our memories living in a distance cloud server. for the final installation I want to project what is on the admin.html page on a cyanotyped screenz with images of water to play with some mixed material vibes! all surrounding the pi.</p>
+
+
+                    `
+                },
+                {
+                    id: "week-seven",
+                    title: "midterm feedback",
+                    date: "2026-03-17",
+                    content: `
+                        <h2>midterm reflection/feedback</h2>
+                        <p>going into the midterm presentation, I was primarily looking for feedback on continuity of the work. How well the individual dimensions of the project reflected the type of research and insights that I wanted to convey. Below is the general feedback that I ended up receiving"</p>
+
+                        <ul>
+                            <li>need to add some edge cases to the form!</li>
+                            <li>when thinking about the installation, need to put more thought into how it reflects the themes of the piece</li>
+                            <ul>
+                                <li>conflicting opinions on the cyanotype idea. one thought was that it is not super related to the text and memory you are including, other thoughts are that moving away from screen-based and towards material projections contributes to the point you are making. Other thought was that the cyanotyped water images may be leading as opposed to allowing the participants to decide what their memories should mean and look like. it asserts a pre-existing visual language. Last thing is that project/screen might make the participant not feel as encouraged to participate and instead just look at it the piece.</li>
+                            </ul>
+                            <li>think deeply about scope! the collective metadata negotiation piece is strong conceptually but don't worry about implementing that here. just focuse on further ritualizing the encounter</li>
+                        </ul>
+
+                        <br>
+                        <p>outside of reflecting post-midterm, I primarily worked on writing my thesis paper and updating the documentation and block posts on this website this week.</p>
+                    `
+                },
+                {
+                    id: "week-eight",
+                    title: "sketches and writing",
+                    date: "2026-03-24",
+                    content: `
+                        <h2>installation sketching</h2>
+                        <p>after last weeks feedback, I thought a lot about what form the physical installation should take and whether playing with cloth + cyanotyped images what the ideal method.</p>
+
+                        <img src="">
+
+                        <p>After some sketches, i met with sam to discuss the acutal installation of this project and got a lot of amazing feedback to come to one design idea. I aim to to create a wooden tray, around 3x4 feet, for the raspberry pi to sit on. The wood will be etched with some swirling patterns and ridges making it a highly textured object to interact with. I want to model it off of a Lukasa, a memory device that was created precolonial central Africa around what is now known as the Democratic Republic of Congo. The goal of the board is that it supports the making and remembering of memory and history through material and ideographic stimulation through the archives. The board is typically adorned with beads, ropes, metal, shells, etc to symbolize moments, people, lists, maps, and stories of history, encoding them in tangible symbols that make up and piece that you may touch and remember through. For my piece, I'd want to do something similar, having the (around 20) pieces be connected to your memory through its metadata in some way. I imagine that each piece would have an NFC sticker on the back that is associated with a custom metadata category (the current question "other metadata" gets at this) that describes its theme. However, in order to toe this line between usability and negotiation, people can pick up an item type that doesn't have a category and give it one, or they can add another label to a previous item. For instance, one person sees that the cowrie shell is not associated with the metadata yet, they tap it, add their memory, and use the description "ocean" to connect with cowrie shell. Now if someone else has a memory about the ocean, they may grab a cowrie shell as well! Or if the moon was more important to their understanding of their memory, they might give the cowrie shell a new label of "moon". Now other people can see that a cowrie shell can mean both/either "moon" or "ocean"! This embraces multiplicity and self-organization! I think this way of negotiating seems a lot easier to implement + test so I really want to try to mock this up as soon as possible to do that.</p>
+
+                        <p>the spatial grammar of the board would also be important here. people may be prompted to put their memory on the area or region of the board that feels right for your memory (maybe suggestions, maybe not). Over time the board then will become a heatmap of where people located their memories in space, countering the logic of data being flat.</p>
+
+                        <h2>other updates</h2>
+                        <p>I booked some time to get trained on the laser cutter this week so I can carve the board itself that the pi will go on! I also booked office hours with various faculty for next week to give myself a deadline for my proof of concept for the installation.</p>
+
+                        Reflecting on your expectations for the demo day vs the feedback you received, write about how you will move forward for the remainder of the semester with your project. Prepare a 5 minute presentation for the class that shows documentation of the work, and describe how people responded to it. Ask questions of your audience. 
+                    `
+                },
+                {
+                    id: "about",
+                    title: "About",
+                    date: "",        
+                    content: `
+                        <p><i>Fugitive digital archives</i> is a research and design experiment by <a href="https://irawo.neocities.org">Irawo Ajasin</a> that explore how one might design a digital archive that enables and encourages "digital disobedience". I ask, in what ways can a piece of archival technology trouble our current relationship with saving our memories and histories through digital platforms? How can a piece of archival technology communicate a set of new values and considerations for how digital archives can be designed to center fugitivity?</p>
+                
+                        <p>The goal of this work is to develop an installation that serves as an interactive and hyperlocal digital archive that troubles how traditional platforms mediate memory and proposes how a speculative digital archive may support fugitive ways of remembering with technology.
+                            
+                        <p>find me elsewhere</p>
+                        <ul>
+                            <li><a href="https://www.are.na/star">are.na</a></li>
+                            <li><a href="https://www.instagram.com/irawoonline">insta</a></li>
+                            <li><a href="https://special.fish/irawo">special fish</a></li>
+                            <li><a class="u-email" href="mailto:irawoonline@proton.me">email me!</a></li>
+                        </ul>
+
+                        <h2>workback plan</h2>
+                        <dl>
+                            <dt>1/27: week 1</dt>
+                                <dd>- organize my ideas, vision, and goals (converge more on a deliverable)
+                                <dd>- publish process website</dd>
+                                <dd>- establish a loose timeline</dd>
+                            <dt>2/3: week 2</dt>
+                                <dd>- white cold drink</dd>
+                                <dd>- identify some exemplars</dd>
+                                <dd>- come up with list of design considerations and a priority list</dd>
+                                <dd>- first prototype</dd>
+                            <dt>2/10: week 3</dt>
+                                <dd>- white cold drink</dd>
+                                <dd></dd>
+                            <dt>2/17: week 3</dt>
+                                <dd>- white cold drink</dd>
+                            <dt>2/24: week 4</dt>
+                                <dd>- white cold drink</dd>
+                            <dt>3/3: week 5</dt>
+                                <dd>- </dd>
+                            <dt>3/10: week 6</dt>
+                                <dd>- prepare midterm presentation</dd>
+                                <dd>- implement rita.js to scramble text</dd>
+                            <dt>3/17: week 7</dt>
+                                <dd>- get halfway done with thesis writing</dd>
+                                <dd>- sketch installation proposal</dd>
+                            <dt>3/24: week 8</dt>
+                                <dd>- Make list of a handful of things to polish about software experience</dd>
+                                <dd>- work through software edits list</dd>
+                                <dd>- book office hours for feedback</dd>
+                                <dd>- settle on final installation</dd>
+                            <dt>3/31: week 9</dt>
+                                <dd>- finalize software edits (ritualized flow, design, and metadata logic, keep it simple!)</d>
+                                <dd>- makerspace equipment training</dd>
+                                <dd>- write up tech documentation</dd>
+                                <dd>- thesis writing</dd>
+                            <dt>4/7: week 10</dt>
+                                <dd>- migrate everything to pi</dd>
+                                <dd>- obtain some memory objects + NFC tags</dd>
+                                <dd>- send thesis first draft to friends + mentors</dd>
+                            <dt>4/14: week 11</dt>
+                                <dd>Complete Thesis Paper Due</dd>
+                                <dd>- finish thesis writing</dd>
+                                <dd>- NFC object prototyping with your objects -> metadata fields</dd>
+                            <dt>4/21: week 12</dt>
+                                <dd>- Fabricate the wooden board on the CNC</dd>
+                                <dd>- set up the projection from the pi (figure out best wall display and things)</dd>
+                            <dt>4/28: week 13</dt>
+                                <dd>- small final test session + polish experience</dd>
+                            <dt>5/5: week 14</dt>
+                                <dd>Final Crit and Showcase!</dd>
+                                <dd>- Make final edits and polishes to the installation</dd>
+                                <dd>- Archive/documentation/final website work</dd>
+                        </dl>
+                    `
+                }
+
+            ];
+
+            const listEl = document.getElementById("postList");
+            const mainEl = document.getElementById("main");
+
+            /* sidebar */
+            POSTS.slice().reverse().forEach(post => {
+                const li = document.createElement("li");
+                li.innerHTML = `<a href="#${post.id}" data-id="${post.id}">${post.title}${post.date ? `<span class="post-date">${formatDate(post.date)}</span>` : ""}</a>`;
+                listEl.appendChild(li);
+
+                const article = document.createElement("article");
+                article.className = "post";
+                article.id = "post-" + post.id;
+                article.innerHTML = `
+                    <div class="post-header">
+                    <h1>${post.title}</h1>
+                    ${post.date ? `<div class="post-meta">${formatDate(post.date)}</div>` : ""}
+                    </div>
+                    <div class="post-content">${post.content}</div>
+                `;
+                mainEl.appendChild(article);
+            });
+
+            function showPost(id) {
+                document.querySelectorAll(".post").forEach(el => el.classList.remove("visible"));
+                document.querySelectorAll(".post-list a").forEach(el => el.classList.remove("active"));
+                document.getElementById("welcome").style.display = "none";
+                const article = document.getElementById("post-" + id);
+                const link = document.querySelector(`.post-list a[data-id="${id}"]`);
+                if (article) { article.classList.add("visible"); mainEl.scrollTop = 0; }
+                if (link) link.classList.add("active");
+            }
+
+            listEl.addEventListener("click", e => {
+                const a = e.target.closest("a[data-id]");
+                if (!a) return;
+                e.preventDefault();
+                history.pushState({ id: a.dataset.id }, "", "#" + a.dataset.id);
+                showPost(a.dataset.id);
+            });
+
+            window.addEventListener("popstate", e => { if (e.state?.id) showPost(e.state.id); });
+
+            const hash = location.hash.slice(1);
+            if (hash && POSTS.find(p => p.id === hash)) showPost(hash);
+
+            function formatDate(d) {
+                return new Date(d + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+            }
+        </script>
+    </body>
+</html>

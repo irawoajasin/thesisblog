@@ -385,16 +385,68 @@
                         <h2>installation sketching</h2>
                         <p>after last weeks feedback, I thought a lot about what form the physical installation should take and whether playing with cloth + cyanotyped images what the ideal method.</p>
 
-                        <img src="">
-
-                        <p>After some sketches, i met with sam to discuss the acutal installation of this project and got a lot of amazing feedback to come to one design idea. I aim to to create a wooden tray, around 3x4 feet, for the raspberry pi to sit on. The wood will be etched with some swirling patterns and ridges making it a highly textured object to interact with. I want to model it off of a Lukasa, a memory device that was created precolonial central Africa around what is now known as the Democratic Republic of Congo. The goal of the board is that it supports the making and remembering of memory and history through material and ideographic stimulation through the archives. The board is typically adorned with beads, ropes, metal, shells, etc to symbolize moments, people, lists, maps, and stories of history, encoding them in tangible symbols that make up and piece that you may touch and remember through. For my piece, I'd want to do something similar, having the (around 20) pieces be connected to your memory through its metadata in some way. I imagine that each piece would have an NFC sticker on the back that is associated with a custom metadata category (the current question "other metadata" gets at this) that describes its theme. However, in order to toe this line between usability and negotiation, people can pick up an item type that doesn't have a category and give it one, or they can add another label to a previous item. For instance, one person sees that the cowrie shell is not associated with the metadata yet, they tap it, add their memory, and use the description "ocean" to connect with cowrie shell. Now if someone else has a memory about the ocean, they may grab a cowrie shell as well! Or if the moon was more important to their understanding of their memory, they might give the cowrie shell a new label of "moon". Now other people can see that a cowrie shell can mean both/either "moon" or "ocean"! This embraces multiplicity and self-organization! I think this way of negotiating seems a lot easier to implement + test so I really want to try to mock this up as soon as possible to do that.</p>
+                        <p>After some sketches, i met with sam to discuss the actual installation of this project and got a lot of amazing feedback to come to one design idea. I aim to to create a wooden tray, around 3x4 feet, for the raspberry pi to sit on. The wood will be etched with some swirling patterns and ridges making it a highly textured object to interact with. I want to model it off of a Lukasa, a memory device that was created precolonial central Africa around what is now known as the Democratic Republic of Congo. The goal of the board is that it supports the making and remembering of memory and history through material and ideographic stimulation through the archives. The board is typically adorned with beads, ropes, metal, shells, etc to symbolize moments, people, lists, maps, and stories of history, encoding them in tangible symbols that make up and piece that you may touch and remember through. For my piece, I'd want to do something similar, having the (around 20) pieces be connected to your memory through its metadata in some way. I imagine that each piece would have an NFC sticker on the back that is associated with a custom metadata category (the current question "other metadata" gets at this) that describes its theme. However, in order to toe this line between usability and negotiation, people can pick up an item type that doesn't have a category and give it one, or they can add another label to a previous item. For instance, one person sees that the cowrie shell is not associated with the metadata yet, they tap it, add their memory, and use the description "ocean" to connect with cowrie shell. Now if someone else has a memory about the ocean, they may grab a cowrie shell as well! Or if the moon was more important to their understanding of their memory, they might give the cowrie shell a new label of "moon". Now other people can see that a cowrie shell can mean both/either "moon" or "ocean"! This embraces multiplicity and self-organization! I think this way of negotiating seems a lot easier to implement + test so I really want to try to mock this up as soon as possible to do that.</p>
 
                         <p>the spatial grammar of the board would also be important here. people may be prompted to put their memory on the area or region of the board that feels right for your memory (maybe suggestions, maybe not). Over time the board then will become a heatmap of where people located their memories in space, countering the logic of data being flat.</p>
 
                         <h2>other updates</h2>
                         <p>I booked some time to get trained on the laser cutter this week so I can carve the board itself that the pi will go on! I also booked office hours with various faculty for next week to give myself a deadline for my proof of concept for the installation.</p>
-
-                        Reflecting on your expectations for the demo day vs the feedback you received, write about how you will move forward for the remainder of the semester with your project. Prepare a 5 minute presentation for the class that shows documentation of the work, and describe how people responded to it. Ask questions of your audience. 
+                    `
+                },
+                {
+                    id: "week-nine",
+                    title: "writing and testing",
+                    date: "2026-03-31",
+                    content: `
+                        <p>This week I primarily worked on my thesis writing which ended up being very helpful in reminding myself of my goals for this work. I found that after speaking with Sam last week and trying to come up with a clearer image for the final installation, I started to get very overwhealmed and unfocused. I was having a hard time feeling like there was an actual throughline across my research, the server design that I have developed, and the ideas I was having around the exhibition interaction. Through writing, I really clarified that my goal was communicating methods of designing archives as a place of inquiry. So I needed to think more about how my questions could shine through the piece.</p>
+                        <p> I also worked this week a bit with testing some nfc tags that I orded. I was thinking about what it means to embed a memory into an object. When we take photos or write things into our notes app for instance, that data isn't just "sent to the cloud" to be stored. It sits on a harddrive. I was thinking about how when police confiscate phones they are able to do data forensics and uncover data, even if it had been deleted. Our phone are containers for our datafied memories in so many ways, not just through the cloud but through the device itself. In me tinkering with the nfc tags, I really just wanted to figure out how to make the tap communicate with the server. By the end of this week, I was able to make it so that when I tap the nfc tag on my phone, a page comes up with a random memory. progress!</p>
+                    `
+                },
+                {
+                    id: "week-ten",
+                    title: "designing for galleries",
+                    date: "2026-04-07",
+                    content: `
+                        <p>This week I met with tega to get some feedback on how I'm thinking about the actual physical installation. I showed her some of my sketches and showed the current interaction of submitting a memory and visualizing it on the display. She gave me a bunch of feedback around elements of the install that I hadn't put much thought to as someone who has really only worked on screen based things through mdoerated experiences. She mentioned how for designing for a gallery or exhibition, you have to think about the people who may interact with the piece but also the people who will walk by and glance at it for 5 seconds. Thinking about what they might gather from it. Through that talk with her I started thinking about the three levels of interaction. Some people may approach wanting to add a memory to the archive. They can engage by scanning a QR code and adding their memory to the experience! Some people might only want to view other peoples memories so I have to make it really easy and clear for them to pick up the nfc objects, tap them, and view the memories. This part I think I still need to iron out how that might work. Lastly, there will be people who are just walking by. Tega mentioned that just by looking at the memories, it's not clear what they represent or what kind of transformation may have happened to them within the archive so it can be helpful to improve the visibility of it. However, she also mentioned that it's ok for people not to know the full underbelly of what's going on but just to make it look interesting. After this talk with her I have realized how much work I need to do to create a compelling experience within physical space as opposed to just experimenting with software.</p>
+                    `
+                },
+                {
+                    id: "week-eleven",
+                    title: "finishing up thesis writing",
+                    date: "2026-04-14",
+                    content: `
+                        <p>I pretty much just focused on finishing my thesis writing this week! I also went to the writing center and got some necessary feedback on the way that I was writing and how to best write for different audiences who might be engaging in my work.</p>
+                    `
+                },
+                {
+                    id: "week-twelve",
+                    title: "NFC clarification",
+                    date: "2026-04-21",
+                    content: `
+                        <p>This week I met with Bennedetta to talk in depth about my hardware ideas and how to create a feasible and compelling interaction. She suggested I work with an NFC hat to affix to my raspberry pi so that it's all contained and so that people don't have to worry about tapping the tags with their phones and potentially dealing with incompatability issues. I ordered the hat and just worked on trying to set it up this week!</p>
+                    `
+                },
+                {
+                    id: "week-thirteen",
+                    title: "finishing up thesis writing",
+                    date: "2026-04-28",
+                    content: `
+                        <p>In collaboration with a few other IDM students, we hosted a little playtest day to get some feedback on our installations/experiences so far. I worked to try to get the interaction to the point where you can assign your memory to an NFC tag and then reveal its original state when you tap the nfc tag on the hat. Through the playtest I noticed/received some feedback that was helpful to think about:</p>
+                        <ul>
+                            <li>people found that the order of the questions for adding a memory and the way that they were written wasn't super clear and in some ways could be limiting. One person said that if the questions were in reverse order, it would be more like the form helping you reconstruct a memory rather than just documenting it which I loved and felt very in line with the experience that I wanted to evoke.</li>
+                            <li>I didn't realize this initially but in order for people to get to the page to even add a memory, they needed to be on the same wifi as the Raspberry Pi but since the pi was one the secret IDM wifi, they weren't able to access it easily. I had to pass around my laptop which helped and made me think about when Tega suggested I do a kiosk instead of having people scan their own phones to add a memory.</li>
+                            <li>Because multiple people were adding memories at the same time, the assigning of the memories to the nfc tags was not very clean. I had made it so that once you get to the page where you are about to add a memory, it is waiting for the next tap to assign the memory to. If multiple people do it at once, the logic breaks. This problem would also be solved by the kiosk idea!</li>
+                            <li>When people used the NFC tags to tap and see other memories, they didn't tap, they placed the tag on the surface of the NFC hat, likely due to the flat design of it. It made me think that it would be better for the memory to reveal for whatever duration the object is on the hat for, and then fade away when you remove the tag.</li>
+                            <li>In regards to the final installation, someone in the playtest recommended that I project on sheer fabric which she mentioned had a really beautiful and ethereal visual effect. So I looekd around on Facebook marketplace this week to get one to play around with as well</li>
+                        </ul>
+                    `
+                },
+                {
+                    id: "week-fourteen",
+                    title: "final edits",
+                    date: "2026-05-04",
+                    content: `
+                        <p>This week I got the piece of sheer fabric and really just focused on debugging, implementing feedback, and testing with the actual projector. The way that the text looked on the sheer fabric was beautiful so I was a big fan of that. I'd love to work with more precise projection mapping in the future! Additionally, I came across a little file box from my neighbor who used it as a personal archive of his recipies and documents. Due to timing, I decided against carving a wooden base for the Pi server but I through that using this filebox as the container for the pi would be compelling and reflective of the archive infrastructure.</p>
                     `
                 },
                 {
@@ -416,24 +468,23 @@
 
                         <h2>workback plan</h2>
                         <dl>
-                            <dt>1/27: week 1</dt>
+                            <dt>1/27: week 0</dt>
                                 <dd>- organize my ideas, vision, and goals (converge more on a deliverable)
                                 <dd>- publish process website</dd>
                                 <dd>- establish a loose timeline</dd>
-                            <dt>2/3: week 2</dt>
-                                <dd>- white cold drink</dd>
+                            <dt>2/3: week 1</dt>
                                 <dd>- identify some exemplars</dd>
                                 <dd>- come up with list of design considerations and a priority list</dd>
                                 <dd>- first prototype</dd>
-                            <dt>2/10: week 3</dt>
-                                <dd>- white cold drink</dd>
-                                <dd></dd>
+                            <dt>2/10: week 2</dt>
+                                <dd>- experiment with some of my themes and metaphors to come up with options for interactions</dd>
                             <dt>2/17: week 3</dt>
-                                <dd>- white cold drink</dd>
+                                <dd>- build basic form to submit a memory into the archive</dd>
+                                <dd>- experiement with poetic metadata schemas and how to host a SQLite database</dd>
                             <dt>2/24: week 4</dt>
-                                <dd>- white cold drink</dd>
+                                <dd>- solidify tech stack</dd>
                             <dt>3/3: week 5</dt>
-                                <dd>- </dd>
+                                <dd>- create visual for the SQLite memories</dd>
                             <dt>3/10: week 6</dt>
                                 <dd>- prepare midterm presentation</dd>
                                 <dd>- implement rita.js to scramble text</dd>
